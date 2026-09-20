@@ -1,0 +1,5 @@
+import {db,makeToken,reply,fail} from '../../../lib/server';
+import {cookies} from 'next/headers';
+import {timingSafeEqual} from 'node:crypto';
+const eq=(a,b)=>{const x=Buffer.from(a),y=Buffer.from(b);return x.length===y.length&&timingSafeEqual(x,y)};
+export async function POST(req){try{const body=await req.json();let role,id;if(body.role==='admin'){if(!process.env.ADMIN_PIN||!eq(String(body.code||''),process.env.ADMIN_PIN))return fail('Código inválido',401);role='admin';id='admin'}else{const code=String(body.code||'').trim().toUpperCase();if(!/^[A-F0-9]{16}$/.test(code))return fail('Código inválido',401);const s=db();const {data,error}=await s.rpc('verificar_codigo_participante',{p_codigo:code});if(error||!data)return fail('Código inválido',401);role='participant';id=data}const jar=await cookies();jar.set('grelinho_session',makeToken(role,id),{httpOnly:true,secure:process.env.NODE_ENV==='production',sameSite:'strict',path:'/',maxAge:43200});return reply({ok:true,role});}catch{return fail('Não foi possível entrar',400)}}
