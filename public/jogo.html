@@ -14,5 +14,40 @@
 <section class="panel hidden" id="prizeStep"><h2>01 · Gire a roleta do prêmio</h2><div class="pointer"></div><div class="wheel" id="prizeWheel"></div><p class="wheel-note">Sem pistas: o prêmio só aparece quando a roleta parar.</p><button id="spinPrize">GIRAR ROLETA DO PRÊMIO</button></section>
 <section class="panel hidden" id="prizeReveal"><h2>SEU PRÊMIO É…</h2><div class="heart-frame"><img class="photo" id="prizeImg" alt="Fotografia do prêmio"></div><p class="result" id="prizeName"></p><div id="dareStep" class="hidden"><h2>02 · Gire a roleta do desafio</h2><div class="pointer"></div><div class="wheel" id="dareWheel"></div><p class="wheel-note">Sem pistas: o desafio só aparece quando a roleta parar.</p><button id="spinDare">GIRAR ROLETA DO DESAFIO</button></div></section>
 <section class="panel hidden" id="challenge"><h2 id="dareTitle"></h2><p id="dareText"></p><div class="timer" id="time">15:00</div><p class="muted">A organizadora confirma o resultado. O cronômetro continua mesmo se fechar esta página.</p></section>
-<section class="panel hidden" id="admin"><h2>Controle da organizadora 🔐</h2><p id="adminName"></p><div class="buttons"><button id="success">DESAFIO CUMPRIDO · GANHOU</button><button class="danger" id="fail">NÃO CUMPRIU · DEVOLVER PRÊMIO</button><button class="secondary" id="rerollDare">🎲 SORTEAR OUTRO DESAFIO</button></div></section>
-<section class="panel hidden" id="waiting">Aguardando uma participante girar a roleta…</section><section class="panel hidden" id="won">Você já conquistou seu prêmio! 💗</section><section class="panel hidden" id="noActive">Nenhum prêmio disponível no momento. Aguarde a organizadora.</section></div><footer>Fotos e interações exigem consentimento. Respeite os desconhecidos e a equipe do bar. ✦</footer></div><script src="/client.js" defer></script></body></html>
+
+<section class="panel hidden" id="admin">
+  <h2>Controle da organizadora 🔐</h2>
+
+  <p id="adminName"></p>
+
+  <div class="buttons">
+    <button id="success">
+      DESAFIO CUMPRIDO · GANHOU
+    </button>
+
+    <button class="danger" id="fail">
+      NÃO CUMPRIU · DEVOLVER PRÊMIO
+    </button>
+
+    <button class="secondary" id="rerollDare">
+      🎲 SORTEAR OUTRO DESAFIO
+    </button>
+  </div>
+
+  <div style="margin-top:30px;padding-top:20px;border-top:1px solid #88516c">
+
+    <h2>Reiniciar o jogo</h2>
+
+    <p class="muted">
+      Apaga o progresso dos sorteios e devolve todos
+      os prémios e desafios à roleta.
+      Os códigos das participantes e as fotografias
+      serão preservados.
+    </p>
+
+    <button class="danger" id="resetGame">
+      🔄 REINICIAR JOGO
+    </button>
+
+  </div>
+</section><section class="panel hidden" id="waiting">Aguardando uma participante girar a roleta…</section><section class="panel hidden" id="won">Você já conquistou seu prêmio! 💗</section><section class="panel hidden" id="noActive">Nenhum prêmio disponível no momento. Aguarde a organizadora.</section></div><footer>Fotos e interações exigem consentimento. Respeite os desconhecidos e a equipe do bar. ✦</footer></div><script src="/client.js" defer></script></body></html>
